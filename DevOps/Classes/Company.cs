@@ -1,6 +1,6 @@
 using DevOps.Interfaces;
 
-public class Complany : ICompany
+public class Company : ICompany
 {
     public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
