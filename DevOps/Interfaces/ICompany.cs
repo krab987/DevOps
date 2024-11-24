@@ -19,7 +19,6 @@ public interface ICompany
     /// Fire worker (remove) from company
     /// </summary>
     /// <param name="id">Id of worker to fire</param>
-    bool FireWorkerAt(int id);
-
+    bool FireWorkerAt(int id); // How to find worker ID?
 
 }
