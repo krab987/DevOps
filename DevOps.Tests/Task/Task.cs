@@ -22,8 +22,11 @@ public class TaskTest
         Assert.Equals(testDescription, task.Description);
     }
     [Test]
-    public void StatusTest() // Nothing to test yet
+    public void StatusTest()
     {
-        Assert.Fail();
+        Worker worker = new();
+        Task task = new();
+        worker.ChangeStatusTask(task, Status.Done);
+        Assert.Equals(Status.Done, task.StatusTask);
     }
 }
