@@ -1,3 +1,5 @@
+namespace DevOps.Classes;
+
 using DevOps.Interfaces;
 
 public class Company : ICompany

@@ -1,3 +1,5 @@
+namespace DevOps.Classes;
+
 using DevOps.Enums;
 using DevOps.Interfaces;
 
