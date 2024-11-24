@@ -1,6 +1,6 @@
 namespace DevOps.Tests;
 using DevOps.Classes;
-public class WorkerList
+public class WorkerListTest
 {    
     [Test]
     public void WorkerListTest1()
