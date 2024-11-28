@@ -1,7 +1,6 @@
 namespace DevOps.Tests;
 using DevOps.Classes;
 using NUnit.Framework.Internal;
-using NUnit.Framework.Legacy;
 
 public class WorkerGetSetTest
 {
@@ -19,7 +18,7 @@ public class WorkerGetSetTest
         Worker worker = new();
         string testName = "Sdsjnoihufheruifsd";
         worker.FirstName = testName;
-        ClassicAssert.AreEqual(worker.FirstName, testName);
+        Assert.That(worker.FirstName, Is.EqualTo(testName));
     }
     [Test]
     public void LastNameTestSymbols()
@@ -35,7 +34,7 @@ public class WorkerGetSetTest
         Worker worker = new();
         string testName = "Sdsjnoihufheruifsd";
         worker.LastName = testName;
-        ClassicAssert.AreEqual(worker.LastName, testName);
+        Assert.That(worker.LastName, Is.EqualTo(testName));
     }
     [Test]
     public void AgeTestBig()
@@ -50,7 +49,7 @@ public class WorkerGetSetTest
         Worker worker = new();
         int testAge = 60;
         worker.Age = testAge;
-        ClassicAssert.AreEqual(testAge, worker.Age);
+        Assert.That(worker.Age, Is.EqualTo(testAge));
     }
     [Test]
     public void PositionTest()
@@ -58,7 +57,7 @@ public class WorkerGetSetTest
         Worker worker = new();
         string testPosition = "CEO of Bitcoin";
         worker.Position = testPosition;
-        ClassicAssert.AreEqual(testPosition, worker.Position);
+        Assert.That(worker.Position, Is.EqualTo(testPosition));
     }
     [Test]
     public void SalaryTest()
@@ -66,6 +65,6 @@ public class WorkerGetSetTest
         Worker worker = new();
         int testSalary = 60;
         worker.Salary = testSalary;
-        ClassicAssert.AreEqual(testSalary, worker.Salary);
+        Assert.That(worker.Salary, Is.EqualTo(testSalary));
     }
 }

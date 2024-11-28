@@ -2,6 +2,7 @@ namespace DevOps.Tests;
 using DevOps.Classes;
 using NUnit.Framework.Internal;
 using NUnit.Framework.Legacy;
+using NUnit.Framework;
 
 public class WorkerTaskTest
 {
@@ -11,7 +12,7 @@ public class WorkerTaskTest
         Worker worker = new();
         Task task = new();
         worker.AddTask(task);
-        ClassicAssert.AreEqual(task, worker.Tasks.First());
+        Assert.That(worker.Tasks.First(), Is.EqualTo(task));
     }
     [Test]
     public void TaskTest2()
@@ -22,6 +23,6 @@ public class WorkerTaskTest
         worker.AddTask(task);
         worker.AddTask(task2);
         _ = worker.DeleteTaskAt(0);
-        ClassicAssert.AreEqual(task2, worker.Tasks.First());
+        Assert.That(worker.Tasks.First(), Is.EqualTo(task2));
     }
 }
