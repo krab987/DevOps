@@ -1,6 +1,6 @@
-using DevOps.Interfaces;
 using DevOps.Classes;
 using NUnit.Framework.Internal;
+using NUnit.Framework.Legacy;
 namespace DevOps.Tests;
 
 public class GetSetTest
@@ -11,7 +11,7 @@ public class GetSetTest
         Company company = new();
         string testName = "Test1";
         company.Name = testName;
-        Assert.Equals(company.Name, testName);
+        ClassicAssert.AreEqual(company.Name, testName);
     }
     [Test]
     public void DescriptionTest()
@@ -19,6 +19,6 @@ public class GetSetTest
         Company company = new();
         string testDescription = "Test1";
         company.Description = testDescription;
-        Assert.Equals(company.Description, testDescription);
+        ClassicAssert.AreEqual(company.Description, testDescription);
     }
 }

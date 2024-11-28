@@ -7,8 +7,10 @@ namespace DevOps.Interfaces;
 /// </summary>
 public interface ITask
 {
+    int Id { get; set; }
+
     string Title { get; set; }
     string Description { get; set; }
-    Status StatusTask { get; }
+    Status StatusTask { get; set; }
 
 }
