@@ -1,8 +1,7 @@
 namespace DevOps.Tests;
 using DevOps.Classes;
-using DevOps.Enums;
-using NUnit.Framework.Interfaces;
 using NUnit.Framework.Internal;
+using NUnit.Framework.Legacy;
 
 public class WorkerTaskTest
 {
@@ -12,7 +11,7 @@ public class WorkerTaskTest
         Worker worker = new();
         Task task = new();
         worker.AddTask(task);
-        Assert.Equals(task, worker.Tasks.First());
+        ClassicAssert.AreEqual(task, worker.Tasks.First());
     }
     [Test]
     public void TaskTest2()
@@ -22,7 +21,7 @@ public class WorkerTaskTest
         Task task2 = new();
         worker.AddTask(task);
         worker.AddTask(task2);
-        worker.DeleteTaskAt(0);
-        Assert.Equals(task2, worker.Tasks.First());
+        _ = worker.DeleteTaskAt(0);
+        ClassicAssert.AreEqual(task2, worker.Tasks.First());
     }
 }

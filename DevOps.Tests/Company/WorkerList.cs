@@ -1,14 +1,16 @@
 namespace DevOps.Tests;
 using DevOps.Classes;
+using NUnit.Framework.Legacy;
+
 public class WorkerListTest
-{    
+{
     [Test]
     public void WorkerListTest1()
     {
         Company company = new();
         Worker worker1 = new();
         company.HireWorker(worker1);
-        Assert.Equals(worker1, company.Workers.ElementAt(0));
+        ClassicAssert.AreEqual(worker1, company.Workers.ElementAt(0));
     }
     [Test]
     public void WorkerListTest2()
@@ -18,7 +20,7 @@ public class WorkerListTest
         Worker worker2 = new();
         company.HireWorker(worker1);
         company.HireWorker(worker2);
-        Assert.Equals(worker1, company.Workers.ElementAt(0));
+        ClassicAssert.AreEqual(worker1, company.Workers.ElementAt(0));
     }
     [Test]
     public void WorkerListTest3()
@@ -28,7 +30,7 @@ public class WorkerListTest
         Worker worker2 = new();
         company.HireWorker(worker1);
         company.HireWorker(worker2);
-        Assert.Equals(worker2, company.Workers.ElementAt(1));
+        ClassicAssert.AreEqual(worker2, company.Workers.ElementAt(1));
     }
     [Test]
     public void WorkerListTest4()
@@ -38,7 +40,7 @@ public class WorkerListTest
         Worker worker2 = new();
         company.HireWorker(worker1);
         company.HireWorker(worker2);
-        company.FireWorkerAt(0); // I assume ID is their number in the list.
-        Assert.Equals(worker2, company.Workers.ElementAt(0));
+        _ = company.FireWorkerAt(0); // I assume ID is their number in the list.
+        ClassicAssert.AreEqual(worker1.Id, company.Workers.ElementAt(0).Id);
     }
 }
