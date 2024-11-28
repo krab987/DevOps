@@ -4,15 +4,26 @@ using DevOps.Interfaces;
 
 public class Company : ICompany
 {
-    public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public string Description { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-    public List<IWorker> Workers => throw new NotImplementedException();
-    public bool FireWorkerAt(int id)
-    {
-        throw new NotImplementedException();
-    }
+    public string Name { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public List<IWorker> Workers { get; } = new List<IWorker>();
+
     public void HireWorker(IWorker worker)
     {
-        throw new NotImplementedException();
+        if (worker != null && !Workers.Contains(worker))
+        {
+            Workers.Add(worker);
+        }
+    }
+
+    public bool FireWorkerAt(int id)
+    {
+        var worker = Workers.FirstOrDefault(w => w.Id.GetHashCode() == id);
+        if (worker != null)
+        {
+            _ = Workers.Remove(worker);
+            return true;
+        }
+        return false;
     }
 }
