@@ -1,9 +1,9 @@
 
 namespace DevOps.Classes;
 
-using System.Text.RegularExpressions;
 using DevOps.Enums;
 using DevOps.Interfaces;
+using System.Text.RegularExpressions;
 
 public class Worker : IWorker
 {
