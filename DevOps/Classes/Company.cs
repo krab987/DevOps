@@ -16,9 +16,9 @@ public class Company : ICompany
         }
     }
 
-    public bool FireWorkerAt(int id)
+    public bool FireWorkerAt(Guid id)
     {
-        var worker = Workers.FirstOrDefault(w => w.Id.GetHashCode() == id);
+        var worker = Workers.FirstOrDefault(w => w.Id == id);
         if (worker != null)
         {
             _ = Workers.Remove(worker);

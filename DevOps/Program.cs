@@ -87,7 +87,7 @@ class Program
                 case "4":
                     if (!SelectCompany(out selectedCompany)) break;
                     Console.Write("Enter worker ID to fire: ");
-                    if (int.TryParse(Console.ReadLine(), out var id) && selectedCompany.FireWorkerAt(id))
+                    if (Guid.TryParse(Console.ReadLine(), out var id) && selectedCompany.FireWorkerAt(id))
                     {
                         Console.WriteLine("Worker fired. Press any key to continue...");
                     }
