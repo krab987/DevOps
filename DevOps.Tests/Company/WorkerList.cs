@@ -40,7 +40,7 @@ public class WorkerListTest
         Worker worker2 = new();
         company.HireWorker(worker1);
         company.HireWorker(worker2);
-        _ = company.FireWorkerAt(0); // I assume ID is their number in the list.
+        _ = company.FireWorkerAt(worker2.Id); // I assume ID is their number in the list.
         ClassicAssert.AreEqual(worker1.Id, company.Workers.ElementAt(0).Id);
     }
 }
